@@ -1,0 +1,20 @@
+{
+  "name": "@shared/library",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/library.umd.js",
+  "module": "dist/library.es.js",
+  "packageManager": "yarn@4.6.0",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "@yarnpkg/sdks": "^3.2.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  }
+}
