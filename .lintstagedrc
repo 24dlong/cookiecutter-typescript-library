@@ -1,0 +1,6 @@
+{
+  "**/*.{js,mjs,cjs,ts}": [
+    "eslint --fix",
+    "prettier --write --cache-location=.prettier/.prettier-cache"
+  ]
+}
