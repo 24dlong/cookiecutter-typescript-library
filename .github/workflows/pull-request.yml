@@ -1,0 +1,38 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint, Test, and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: enable corepack
+        run: corepack enable
+
+      - name: set node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Lint
+        run: |
+          yarn lint
+          git diff --exit-code
+
+      - name: Test
+        run: yarn coverage
+
+      - name: Build
+        run: yarn build
