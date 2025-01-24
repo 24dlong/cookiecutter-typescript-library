@@ -1,0 +1,10 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pull:
+    uses: 24dlong/github-shared-workflows/.github/workflows/pull.yml@main
