@@ -51,7 +51,8 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
 
       - name: Generate Token
-        run: echo "CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token \
+        run:
+          echo "CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token \
           --domain $AWS_CODE_ARTIFACT_DOMAIN \
           --domain-owner $AWS_ACCOUNT_ID \
           --query authorizationToken \
