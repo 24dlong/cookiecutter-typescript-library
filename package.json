@@ -1,6 +1,5 @@
 {
   "name": "@shared/library",
-  "version": "1.0.0",
   "type": "module",
   "main": "dist/library.umd.js",
   "module": "dist/library.es.js",
@@ -17,6 +16,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
     "prettier": "3.4.2",
+    "semantic-release": "^24.2.1",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.1",
     "vite": "^6.0.7",
@@ -27,7 +27,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint . && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
-    "lint:fix": "eslint --fix && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
+    "lint:fix": "eslint --fix && prettier . --write --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
     "prepare": "husky"
   }
 }
