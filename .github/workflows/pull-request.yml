@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  lint:
-    name: Lint, Test, and Build
+  quality-gate:
+    name: Quality Gate
     runs-on: ubuntu-latest
 
     steps:

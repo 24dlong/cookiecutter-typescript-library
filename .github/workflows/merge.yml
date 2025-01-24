@@ -1,0 +1,63 @@
+name: Merge Workflow
+
+on:
+  push:
+    branches:
+      - test
+
+env:
+  AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
+  AWS_CODE_ARTIFACT_DOMAIN: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
+  AWS_CODE_ARTIFACT_REPOSITORY: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set Node & Yarn Versions
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn coverage
+
+      - name: Build
+        run: yarn build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
+
+      - name: Generate Token
+        run: export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain $AWS_CODE_ARTIFACT_DOMAIN --domain-owner $AWS_ACCOUNT_ID --query authorizationToken --output text`
+
+      - name: Echo Token
+        run: echo $CODEARTIFACT_AUTH_TOKEN
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: $CODEARTIFACT_AUTH_TOKEN
+        run: npx semantic-release

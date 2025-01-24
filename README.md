@@ -78,3 +78,12 @@ for older environments if needed.
 1. Run `yarn add --dev @commitlint/{cli,config-conventional}`
 1. Create a `commitlint.config.js` file
 1. Add a `.husky/commit-msg` file to run `commitlint`
+
+## Versioning
+
+This project uses `semantic-release` (along with conventional commits) for versioning.
+
+1. Run `yarn add -D semantic-release`
+1. https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
+
+## GitHub Workflows
