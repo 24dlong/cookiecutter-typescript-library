@@ -6,31 +6,8 @@ on:
       - main
 
 jobs:
-  lint:
-    name: Lint, Test, and Build
+  quality-gate:
     runs-on: ubuntu-latest
-
+    name: Quality Gate
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Set Node & Yarn Versions
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-          cache: "yarn"
-
-      - name: Install Dependencies
-        run: yarn install
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Test
-        run: yarn coverage
-
-      - name: Build
-        run: yarn build
+      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@1.1.1
