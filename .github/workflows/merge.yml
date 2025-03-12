@@ -1,0 +1,28 @@
+name: Merge Workflow
+
+on:
+  push:
+    branches:
+      - test
+
+permissions:
+  contents: write # for semantic-release to be able to publish a GitHub release
+  issues: write # for semantic-release to be able to comment on released issues
+  pull-requests: write # for semantic-release to be able to comment on released pull requests
+  id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Publish Action
+        uses: 24dlong/github-actions-library/actions/javascript/library/publish@merge-action
+        with:
+          AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          AWS_ROLE_TO_ASSUME: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          AWS_CODE_ARTIFACT_DOMAIN: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
+          AWS_CODE_ARTIFACT_REPOSITORY: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
