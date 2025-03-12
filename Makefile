@@ -1,4 +1,4 @@
-.PHONY: setup-env install lint test build
+.PHONY: setup-env install lint test build publish
 
 setup-env:
 	corepack enable
@@ -14,3 +14,6 @@ test:
 
 build:
 	yarn build
+
+publish:
+	yarn semantic-release
