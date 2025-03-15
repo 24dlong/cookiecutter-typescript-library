@@ -28,7 +28,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint . && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
-    "lint:fix": "eslint --fix && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
+    "lint:fix": "eslint --fix && prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache",
     "prepare": "husky"
   }
 }
