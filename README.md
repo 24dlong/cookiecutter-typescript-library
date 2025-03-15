@@ -78,3 +78,21 @@ for older environments if needed.
 1. Run `yarn add --dev @commitlint/{cli,config-conventional}`
 1. Create a `commitlint.config.js` file
 1. Add a `.husky/commit-msg` file to run `commitlint`
+
+### Setup semantic-release
+
+1. Run `yarn add --dev @semantic-release @semantic-release/changelog`
+1. Create a `.releaserc` file
+
+### Create Github Workflows
+
+The vast majority of the code for these workflows is saved centrally in the
+[github-actions-library](https://github.com/24dlong/github-actions-library).
+However, some minor setup is still needed at the repository level.
+
+#### Merge Workflow
+
+1. Create a .nvmrc file
+1. Set the paths option.
+1. Set the permissions needed by the publish action.
+1. Setup the necessary repository variables in GitHub.
