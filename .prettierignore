@@ -6,3 +6,7 @@ coverage
 .pnp.*
 .nvmrc
 .prettierignore
+.gitignore
+Makefile
+*.sh
+yarn.lock

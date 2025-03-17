@@ -2,6 +2,7 @@
 
 setup-env:
 	corepack enable
+	yarn setup:actionlint
 
 install:
 	yarn install
