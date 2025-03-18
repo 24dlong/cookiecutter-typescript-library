@@ -16,7 +16,7 @@
     "globals": "^15.14.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
-    "prettier": "3.4.2",
+    "prettier": "^3.5.3",
     "semantic-release": "^24.2.3",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.1",
@@ -27,8 +27,10 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "eslint . && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache",
-    "lint:fix": "eslint --fix && prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache",
+    "lint:actionlint": "./.cache/bin/actionlint -color",
+    "lint": "eslint . && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
+    "lint:fix": "eslint --fix && prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
+    "setup:actionlint": "./scripts/setup-actionlint.sh",
     "prepare": "husky"
   }
 }

@@ -14,6 +14,7 @@ for older environments if needed.
 ## Contributing
 
 1. In order for your IDE to play nicely with Yarn Berry & TypeScript, you'll likely need to do some additional setup. See [Yarn's documentation](https://yarnpkg.com/getting-started/editor-sdks) and find the section that pertains to your IDE.
+1. Run `make setup-env` once before starting development.
 
 ## Steps to Recreate this Template
 
