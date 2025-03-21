@@ -97,3 +97,9 @@ However, some minor setup is still needed at the repository level.
 1. Set the paths option.
 1. Set the permissions needed by the publish action.
 1. Setup the necessary repository variables in GitHub.
+
+### Configure Dependabot
+
+This repository uses Dependabot to manage dependency updates. To enable Dependabot:
+
+1. Create a `dependabot.yml` file in the `.github` directory
