@@ -1,0 +1,18 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    groups:
+      # Specify a name for the group, which will be used in pull request titles
+      # and branch names
+      minor-updates:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
