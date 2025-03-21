@@ -35,7 +35,7 @@ const RAW_RUNTIME_STATE =
           ["@yarnpkg/sdks", "npm:3.2.1"],\
           ["eslint", "virtual:299e5910a4e60ca9179c0024b4bdba24fc0a0f420b1bf3e7045743738b143b48f935e1c6d76a26250478fb6d63ad001fb1d0f1ff0189930ce5a93a692a4cd360#npm:9.22.0"],\
           ["eslint-config-prettier", "virtual:299e5910a4e60ca9179c0024b4bdba24fc0a0f420b1bf3e7045743738b143b48f935e1c6d76a26250478fb6d63ad001fb1d0f1ff0189930ce5a93a692a4cd360#npm:10.1.1"],\
-          ["globals", "npm:15.14.0"],\
+          ["globals", "npm:16.0.0"],\
           ["husky", "npm:9.1.7"],\
           ["lint-staged", "npm:15.5.0"],\
           ["prettier", "npm:3.5.3"],\
@@ -1651,7 +1651,7 @@ const RAW_RUNTIME_STATE =
           ["@yarnpkg/sdks", "npm:3.2.1"],\
           ["eslint", "virtual:299e5910a4e60ca9179c0024b4bdba24fc0a0f420b1bf3e7045743738b143b48f935e1c6d76a26250478fb6d63ad001fb1d0f1ff0189930ce5a93a692a4cd360#npm:9.22.0"],\
           ["eslint-config-prettier", "virtual:299e5910a4e60ca9179c0024b4bdba24fc0a0f420b1bf3e7045743738b143b48f935e1c6d76a26250478fb6d63ad001fb1d0f1ff0189930ce5a93a692a4cd360#npm:10.1.1"],\
-          ["globals", "npm:15.14.0"],\
+          ["globals", "npm:16.0.0"],\
           ["husky", "npm:9.1.7"],\
           ["lint-staged", "npm:15.5.0"],\
           ["prettier", "npm:3.5.3"],\
@@ -4195,10 +4195,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:15.14.0", {\
-        "packageLocation": "../../.yarn/berry/cache/globals-npm-15.14.0-1cb78aecb8-10c0.zip/node_modules/globals/",\
+      ["npm:16.0.0", {\
+        "packageLocation": "../../.yarn/berry/cache/globals-npm-16.0.0-7f7c56ae12-10c0.zip/node_modules/globals/",\
         "packageDependencies": [\
-          ["globals", "npm:15.14.0"]\
+          ["globals", "npm:16.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
