@@ -1,0 +1,6 @@
+{
+  "scope": "",
+  "project_slug": "my-library",
+  "project_name": "My Library",
+  "_copy_without_render": [".github/workflows/*"]
+}

@@ -16,6 +16,8 @@
 .pnp.*
 
 # Others
+dist/
+.vite/
 .prettier/
 
 # Non-JS executables

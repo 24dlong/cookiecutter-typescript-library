@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+coverage
+.yarn
+.vscode
+.pnp.*
+.nvmrc
+.prettierignore
+.gitignore
+Makefile
+*.sh
+yarn.lock

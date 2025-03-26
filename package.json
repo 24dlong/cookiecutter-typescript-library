@@ -1,35 +1,19 @@
 {
-  "name": "@shared/library",
   "type": "module",
-  "main": "dist/library.umd.js",
-  "module": "dist/library.es.js",
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/js": "^9.23.0",
     "@semantic-release/changelog": "^6.0.3",
-    "@vitest/coverage-v8": "^3.0.9",
-    "@yarnpkg/sdks": "^3.2.1",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
-    "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
-    "semantic-release": "^24.2.3",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.27.0",
-    "vite": "^6.0.9",
-    "vitest": "^3.0.9"
+    "semantic-release": "^24.2.3"
   },
   "scripts": {
-    "build": "tsc && vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "lint:actionlint": "./.cache/bin/actionlint -color",
-    "lint": "eslint . && prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
-    "lint:fix": "eslint --fix && prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
+    "lint:actionlint": "./.cache/bin/actionlint -color ./.github/workflows/*.yml",
+    "lint": "prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
+    "lint:fix": "prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache && yarn lint:actionlint",
     "setup:actionlint": "./scripts/setup-actionlint.sh",
     "prepare": "husky"
   }
