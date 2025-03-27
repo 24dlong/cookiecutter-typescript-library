@@ -1,6 +1,3 @@
-# Ignore artifacts:
-build
-coverage
 .yarn
 .vscode
 .pnp.*
@@ -10,3 +7,7 @@ coverage
 Makefile
 *.sh
 yarn.lock
+*.py
+
+# This is handled by the inner project's linting
+/{{ cookiecutter.project_slug }}

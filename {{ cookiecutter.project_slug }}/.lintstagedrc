@@ -1,0 +1,7 @@
+{
+  "*": [
+    "eslint --fix",
+    "prettier --write --cache-location=.prettier/.prettier-cache"
+  ],
+  "**/.github/workflows/*.{yml,yaml}": "actionlint"
+}

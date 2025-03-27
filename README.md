@@ -1,22 +1,33 @@
 # Typescript Library Cookiecutter
 
-This repository is meant to serve as a template for creating a bare bones
-library for use in Typescript applications. It uses:
+This repository is meant to serve as a template for creating a bare bones Typescript library.
+It uses:
 
 - TypeScript
 - Yarn Berry as the package manager
 - Vite as the bundling tool
 - Vitest for testing
 
-Additionally, the library is compiled using ESNext, so consuming applications are responsible for transpiling
-for older environments if needed.
+Additionally, the library is compiled using ESNext, so consuming applications are responsible for
+transpiling for older environments if needed.
+
+## Usage
+
+Cookiecutter is a python tool used to easily create new repositories from "cookiecutter" templates.
+As such, the steps to use this particular template are as follows:
+
+1. Install [Python 3](https://www.python.org/downloads/) if it isn't already installed.
+1. Run `pip install pipx` to install `pipx`, which is recommended for running python tools.
+1. `cd` into the directory where you want your new repository to be created.
+1. Run `pipx run cookiecutter gh:24dlong/cookiecutter-typescript-library`
+1. Follow the in-terminal prompts to provide the necessary inputs
 
 ## Contributing
 
 1. In order for your IDE to play nicely with Yarn Berry & TypeScript, you'll likely need to do some additional setup. See [Yarn's documentation](https://yarnpkg.com/getting-started/editor-sdks) and find the section that pertains to your IDE.
 1. Run `make setup-env` once before starting development.
 
-## Steps to Recreate this Template
+## How this Template was Created
 
 ### Configuring Yarn
 
