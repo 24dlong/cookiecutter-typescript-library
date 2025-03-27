@@ -712,7 +712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:^12.0.0":
+"@semantic-release/npm@npm:^12.0.0, @semantic-release/npm@npm:^12.0.1":
   version: 12.0.1
   resolution: "@semantic-release/npm@npm:12.0.1"
   dependencies:
@@ -4049,6 +4049,7 @@ __metadata:
     "@commitlint/cli": "npm:^19.8.0"
     "@commitlint/config-conventional": "npm:^19.8.0"
     "@semantic-release/changelog": "npm:^6.0.3"
+    "@semantic-release/npm": "npm:^12.0.1"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^15.5.0"
     prettier: "npm:^3.5.3"

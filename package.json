@@ -1,11 +1,11 @@
 {
   "type": "module",
-  "private": true,
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/npm": "^12.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
