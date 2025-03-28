@@ -20,4 +20,4 @@ build:
 	cd "{{ cookiecutter.project_slug }}" && yarn build
 
 publish:
-	npx semantic-release
+	yarn semantic-release

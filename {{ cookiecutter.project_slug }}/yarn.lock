@@ -6067,6 +6067,7 @@ __metadata:
     "@semantic-release/changelog": "npm:^6.0.3"
     "@vitest/coverage-v8": "npm:^3.0.9"
     "@yarnpkg/sdks": "npm:^3.2.1"
+    conventional-changelog-angular: "npm:^8.0.0"
     eslint: "npm:^9.23.0"
     eslint-config-prettier: "npm:^10.1.1"
     globals: "npm:^16.0.0"
