@@ -1,4 +1,4 @@
 {
   "*": ["prettier --write --cache-location=.prettier/.prettier-cache"],
-  "**/.github/workflows/*.{yml,yaml}": "actionlint"
+  "**/.github/workflows/*.{yml,yaml}": ".cache/bin/actionlint"
 }
