@@ -10,3 +10,6 @@ coverage
 Makefile
 *.sh
 yarn.lock
+.husky
+.gitattributes
+.editorconfig
