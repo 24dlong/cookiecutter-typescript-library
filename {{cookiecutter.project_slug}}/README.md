@@ -15,6 +15,6 @@ for transpiling for older environments if needed.
 This library uses:
 
 - TypeScript
-- Yarn Berry as the package manager
+- pnpm as the package manager
 - Vite as the bundling tool
 - Vitest for testing

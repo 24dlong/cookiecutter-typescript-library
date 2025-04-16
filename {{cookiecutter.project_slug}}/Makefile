@@ -4,17 +4,17 @@ setup-env:
 	corepack enable
 
 install:
-	yarn install
-	yarn setup:actionlint
+	pnpm install
+	pnpm setup:actionlint
 
 lint:
-	yarn lint
+	pnpm lint
 
 test:
-	yarn coverage
+	pnpm coverage
 
 build:
-	yarn build
+	pnpm build
 
 publish:
-	yarn semantic-release
+	pnpm semantic-release
