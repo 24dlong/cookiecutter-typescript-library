@@ -1,15 +1,18 @@
 # Ignore artifacts:
 build
 coverage
-.yarn
+
 .vscode
-.pnp.*
 .nvmrc
 .prettierignore
 .gitignore
 Makefile
 *.sh
-yarn.lock
 .husky
 .gitattributes
 .editorconfig
+.husky/
+
+# pnpm
+node_modules
+pnpm-lock.yaml
