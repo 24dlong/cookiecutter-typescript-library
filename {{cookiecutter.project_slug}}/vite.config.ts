@@ -10,6 +10,7 @@ export default defineConfig({
       fileName: (format) => `${libraryName}.${format}.js`,
     },
     outDir: "dist",
+    target: "ES2020",
   },
   cacheDir: ".vite",
   test: {

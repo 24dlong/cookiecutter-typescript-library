@@ -12,7 +12,10 @@
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
 
     /* Language and Environment */
-    // "target": "ESNext",                                /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    // This is ignored by vite in the actual build process, but the vite docs recommend setting this ESNext as it controls how other
+    // attributes are set by default, notably the useDefineForClassFields
+    // https://vite.dev/guide/features.html#target
+    "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
