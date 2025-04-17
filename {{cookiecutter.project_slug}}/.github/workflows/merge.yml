@@ -8,7 +8,7 @@ on:
       - .nvmrc
       - tsconfig.json
       - package.json
-      - yarn.lock
+      - pnpm-lock.yml
       - lib/**
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Publish Action
-        uses: 24dlong/github-actions-library/actions/javascript/library/publish@v1
+        uses: 24dlong/github-actions-library/actions/javascript/library/publish@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}

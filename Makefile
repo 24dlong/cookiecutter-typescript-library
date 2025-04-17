@@ -4,20 +4,20 @@ setup-env:
 	corepack enable
 
 install:
-	yarn install
-	yarn setup:actionlint
-	cd "{{cookiecutter.project_slug}}" && yarn install
-	cd "{{cookiecutter.project_slug}}" && yarn setup:actionlint
+	pnpm install
+	pnpm setup:actionlint
+	cd "{{cookiecutter.project_slug}}" && pnpm install
+	cd "{{cookiecutter.project_slug}}" && pnpm setup:actionlint
 
 lint:
-	yarn lint
-	cd "{{cookiecutter.project_slug}}" && yarn lint
+	pnpm lint
+	cd "{{cookiecutter.project_slug}}" && pnpm lint
 
 test:
-	cd "{{cookiecutter.project_slug}}" && yarn coverage
+	cd "{{cookiecutter.project_slug}}" && pnpm coverage
 
 build:
-	cd "{{cookiecutter.project_slug}}" && yarn build
+	cd "{{cookiecutter.project_slug}}" && pnpm build
 
 publish:
-	yarn semantic-release
+	pnpm semantic-release

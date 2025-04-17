@@ -1,13 +1,15 @@
-.yarn
 .vscode
-.pnp.*
 .nvmrc
 .prettierignore
 .gitignore
 Makefile
 *.sh
-yarn.lock
 *.py
+.husky/
+
+# pnpm
+node_modules
+pnpm-lock.yaml
 
 # This is handled by the inner project's linting
 /{{ cookiecutter.project_slug }}
