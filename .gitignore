@@ -1,10 +1,10 @@
 .DS_Store
 
 # pnpm
-node_modules/
+node_modules
 
 # Others
-.prettier/
+.prettier
 
 # Non-JS executables
-.cache/
+.cache
