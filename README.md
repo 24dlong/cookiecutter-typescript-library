@@ -5,11 +5,7 @@ It uses:
 
 - TypeScript
 - pnpm as the package manager
-- Vite as the bundling tool
 - Vitest for testing
-
-Additionally, the library is compiled using ESNext, so consuming applications are responsible for
-transpiling for older environments if needed.
 
 ## Usage
 
@@ -32,13 +28,16 @@ As such, the steps to use this particular template are as follows:
 
 1. Run `pnpm init` to setup pnpm as the package manager.
 1. Add the `node_modules` and `.pnpm` directories to the `.gitignore` file.
-   x
+1. Add the `engines` attribute to `package.json`, setting both the `pnpm` and `node` versions.
 
 ### Setup Typescript
 
+1. Add `"type": "module"` to `package.json`
 1. Run `pnpm add -D typescript` to install TypeScript as a dev dependency.
 1. Run `pnpm tsc --init` to create a `tsconfig.json` file.
-1. Make desired changes, most notably reviewing [Vite's recommendations](https://vite.dev/guide/features#typescript)
+1. Make desired changes
+1. Add the `"build"` script to `package.json`
+1. Add the `"exports"` attribute to `package.json` to specify the package entrypoints
 
 ### Project Scaffolding
 
@@ -48,19 +47,11 @@ As such, the steps to use this particular template are as follows:
 1. Add a `/lib/index.ts` file to manage exports.
 1. Add a `"version"` to `package.json`
 
-### Setup Vite as the Build Tool
-
-1. Run `pnpm add --D vite`.
-1. Create a `vite.config.js` file in the root directory.
-1. Add the `"build"` script to `package.json`
-1. Add `"type": "module"` to `package.json` to address the [Vite CJS Deprecation](https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated) warning
-1. Add the `"main"` and `"module"` attributes to `package.json` to specify the package entrypoints
-
 ### Setup Vitest as the Test Tool
 
 1. Run `pnpm add -D vitest @vitest/coverage-v8`.
-1. Update `vite.config.js` file, adding the `test` attribute
 1. Add the `"test"` and `"coverage"` scripts to `package.json`
+1. Create a `vitest.config.js` file in the root directory.
 
 ### Setup Linters
 
@@ -102,7 +93,7 @@ However, some minor setup is still needed at the repository level.
 
 #### Merge Workflow
 
-1. Create a .nvmrc file
+1. Create a .nvmrc file matching the version in the `package.json` file's `engines.node`
 1. Set the paths option.
 1. Set the permissions needed by the publish action.
 1. Setup the necessary repository variables in GitHub.
