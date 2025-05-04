@@ -1,14 +1,13 @@
 # {{ cookiecutter.project_name }}
 
-## Usage
-
 ### Installation
 
 This library is published to a private AWS CodeArtifact repository. Instructions for configuring
 your application to use this private repository are coming soon.
 
-Additionally, the library is compiled using ESNext, so consuming applications are responsible
-for transpiling for older environments if needed.
+## Usage
+
+The library is compiled using TypeScript only and outputs ECMAScript modules (ESM). It is not bundled with tools like Vite or Rollup, so any further bundling or optimization is the responsibility of the consuming application.
 
 ## Contributing
 
@@ -16,5 +15,4 @@ This library uses:
 
 - TypeScript
 - pnpm as the package manager
-- Vite as the bundling tool
 - Vitest for testing
