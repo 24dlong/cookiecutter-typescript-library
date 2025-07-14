@@ -41,10 +41,10 @@ As such, the steps to use this particular template are as follows:
 
 ### Project Scaffolding
 
-1. Create the `dist`, `lib`, and `test` directories.
+1. Create the `dist`, `src`, and `test` directories.
 1. Add `dist/` to .gitignore
-1. Add some code to `/lib` and tests to `/tests`
-1. Add a `/lib/index.ts` file to manage exports.
+1. Add some code to `/src` and tests to `/tests`
+1. Add a `/src/index.ts` file to manage exports.
 1. Add a `"version"` to `package.json`
 
 ### Setup Vitest as the Test Tool
