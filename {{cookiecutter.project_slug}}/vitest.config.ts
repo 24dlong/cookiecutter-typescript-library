@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: "v8", // or 'istanbul'
-      include: ["lib/**/*.ts"],
+      include: ["src/**/*.ts"],
       reporter: ["text"],
     },
   },
