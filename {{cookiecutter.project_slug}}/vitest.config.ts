@@ -6,6 +6,12 @@ export default defineConfig({
       provider: "v8", // or 'istanbul'
       include: ["src/**/*.ts"],
       reporter: ["text"],
+      thresholds: {
+        statements: 95,
+        branches: 95,
+        functions: 95,
+        lines: 95,
+      },
     },
   },
 });
