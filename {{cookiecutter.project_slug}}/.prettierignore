@@ -16,3 +16,4 @@ Makefile
 # pnpm
 node_modules
 pnpm-lock.yaml
+.npmrc
