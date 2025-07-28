@@ -10,6 +10,7 @@ Makefile
 # pnpm
 node_modules
 pnpm-lock.yaml
+.npmrc
 
 # This is handled by the inner project's linting
 /{{ cookiecutter.project_slug }}
