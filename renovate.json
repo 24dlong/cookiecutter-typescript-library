@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "description": "Group minor and patch updates together",
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "minor-updates"
+    },
+    {
+      "description": "Group vitest dependencies together",
+      "matchPackagePatterns": ["^vitest$", "^@vitest/"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "vitest-dependencies"
+    }
+  ]
+}
