@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run Publish Action
         uses: 24dlong/github-actions-library/actions/javascript/library/publish@v2
