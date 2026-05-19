@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run Publish Action
-        uses: 24dlong/github-actions-library/actions/javascript/library/publish@v2
+        uses: 24dlong/github-actions-library/actions/javascript/library/publish@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
