@@ -9,5 +9,15 @@ jobs:
   quality-gate:
     runs-on: ubuntu-latest
     name: Quality Gate | Core
+    permissions:
+      id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
+      contents: read
     steps:
-      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@v2
+      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@v3
+        with:
+          AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          AWS_ROLE_TO_ASSUME: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          AWS_CODE_ARTIFACT_DOMAIN: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
+          AWS_CODE_ARTIFACT_REPOSITORY: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
+          REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}

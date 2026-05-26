@@ -9,3 +9,6 @@ dist
 
 # Non-JS executables
 .cache
+
+# Environment files
+.envrc
