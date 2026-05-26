@@ -1,12 +1,16 @@
-.PHONY: setup-env install lint test build publish
+SHELL := /bin/bash
+.PHONY: setup-env registry-auth install lint test build publish
 
 setup-env:
 	corepack enable
 
+registry-auth:
+	. ./scripts/pnpm-auth.sh
+
 install:
-	pnpm install
+	. ./scripts/pnpm-auth.sh && pnpm install
 	pnpm setup:actionlint
-	cd "{{cookiecutter.project_slug}}" && pnpm install
+	cd "{{cookiecutter.project_slug}}" && pnpm install --frozen-lockfile
 	cd "{{cookiecutter.project_slug}}" && pnpm setup:actionlint
 
 lint:
@@ -20,4 +24,4 @@ build:
 	cd "{{cookiecutter.project_slug}}" && pnpm build
 
 publish:
-	pnpm semantic-release
+	. ./scripts/pnpm-auth.sh && pnpm semantic-release

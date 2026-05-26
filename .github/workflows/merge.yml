@@ -18,6 +18,12 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run Publish Action
-        uses: 24dlong/github-actions-library/actions/javascript/publish@v2
+        uses: 24dlong/github-actions-library/actions/javascript/publish@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          AWS_ROLE_TO_ASSUME: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          AWS_CODE_ARTIFACT_DOMAIN: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
+          AWS_CODE_ARTIFACT_REPOSITORY: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
+          REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}
