@@ -26,7 +26,6 @@
     "lint": "prettier . --check --ignore-unknown --cache-location=.prettier/.prettier-cache && pnpm lint:actionlint",
     "lint:fix": "prettier . --write --ignore-unknown --cache-location=.prettier/.prettier-cache && pnpm lint:actionlint",
     "setup:actionlint": "./scripts/setup-actionlint.sh",
-    "prepare": "husky",
-    "preinstall": "make registry-auth"
+    "prepare": "husky"
   }
 }

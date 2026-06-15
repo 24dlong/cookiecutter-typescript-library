@@ -8,10 +8,10 @@ registry-auth:
 	. ./scripts/pnpm-auth.sh
 
 install:
-	. ./scripts/pnpm-auth.sh && pnpm install
+	make registry-auth
+	pnpm install --frozen-lockfile
 	pnpm setup:actionlint
-	cd "{{cookiecutter.project_slug}}" && pnpm install --frozen-lockfile
-	cd "{{cookiecutter.project_slug}}" && pnpm setup:actionlint
+	cd "{{cookiecutter.project_slug}}" && make install
 
 lint:
 	pnpm lint
