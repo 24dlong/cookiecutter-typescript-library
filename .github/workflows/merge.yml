@@ -9,6 +9,7 @@ permissions:
   contents: write # for semantic-release to be able to publish a GitHub release
   issues: write # for semantic-release to be able to comment on released issues
   pull-requests: write # for semantic-release to be able to comment on released pull requests
+  id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
 
 jobs:
   publish:
