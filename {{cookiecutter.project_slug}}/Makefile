@@ -8,6 +8,7 @@ registry-auth:
 	. ./scripts/pnpm-auth.sh
 
 install:
+	make registry-auth
 	pnpm install --frozen-lockfile
 	pnpm setup:actionlint
 
