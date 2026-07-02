@@ -41,3 +41,34 @@ This library uses:
 - TypeScript
 - pnpm as the package manager
 - Vitest for testing
+- Commits follow conventional commit format
+
+### Test this library in a local app
+
+Use a `file:` dependency from the consuming app. This keeps the setup simple and points the app at this local checkout.
+
+First, build this library:
+
+```bash
+cd /Users/dlong/Documents/Coding/{{cookiecutter.project_slug}}
+pnpm install
+pnpm build
+```
+
+Then, in the consuming app's `package.json`, set the dependency to this local path:
+
+```json
+{
+  "dependencies": {
+    "@24dlong/{{cookiecutter.project_slug}}": "file:/Users/dlong/Documents/Coding/{{cookiecutter.project_slug}}"
+  }
+}
+```
+
+Install dependencies from the consuming app:
+
+```bash
+pnpm install
+```
+
+When you change this library, run `pnpm build` here again. If the consuming app does not pick up the change, run `pnpm install` in the consuming app again and restart its dev server.
