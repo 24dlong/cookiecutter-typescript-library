@@ -32,7 +32,8 @@
     "vitest": "4.1.9"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint:actionlint": "./.cache/bin/actionlint -color ./.github/workflows/*.yml",

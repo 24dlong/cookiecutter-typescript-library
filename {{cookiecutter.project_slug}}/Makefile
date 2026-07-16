@@ -13,6 +13,7 @@ install:
 	pnpm setup:actionlint
 
 lint:
+	pnpm typecheck
 	pnpm lint
 
 test:

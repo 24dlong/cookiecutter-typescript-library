@@ -7,6 +7,7 @@ on:
     paths:
       - .nvmrc
       - tsconfig.json
+      - tsconfig.build.json
       - package.json
       - pnpm-lock.yml
       - src/**
