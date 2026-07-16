@@ -15,13 +15,13 @@ install:
 
 lint:
 	pnpm lint
-	cd "{{cookiecutter.project_slug}}" && pnpm lint
+	cd "{{cookiecutter.project_slug}}" && make lint
 
 test:
-	cd "{{cookiecutter.project_slug}}" && pnpm coverage
+	cd "{{cookiecutter.project_slug}}" && make test
 
 build:
-	cd "{{cookiecutter.project_slug}}" && pnpm build
+	cd "{{cookiecutter.project_slug}}" && make build
 
 publish:
 	. ./scripts/pnpm-auth.sh && pnpm semantic-release
