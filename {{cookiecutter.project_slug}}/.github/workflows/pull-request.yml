@@ -13,7 +13,7 @@ jobs:
       id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
       contents: read
     steps:
-      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@v4
+      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@v5
         with:
           AWS_ACCOUNT_ID: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
           AWS_REGION: ${{ vars.AWS_REGION }}
