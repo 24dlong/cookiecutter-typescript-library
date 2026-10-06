@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES2021",
-    // NodeNext (not "bundler") makes tsc require explicit `.js` extensions on
-    // relative imports. The published dist/ is plain ESM, and Node's ESM loader
-    // can't resolve extensionless specifiers, so consumers that load this package
-    // without a bundler (e.g. Vitest, Node scripts) would fail with
-    // ERR_MODULE_NOT_FOUND.
+    // The published dist/ is plain ESM, and Node's ESM loader can't resolve
+    // extensionless specifiers, so consumers that load this package without a
+    // bundler (e.g. Vitest, Node scripts) would fail with ERR_MODULE_NOT_FOUND.
+    // NodeNext (not "bundler") makes tsc require explicit extensions on relative
+    // imports. Source imports the real `.ts` files, and
+    // rewriteRelativeImportExtensions rewrites them to `.js` in dist/.
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
     "noEmit": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

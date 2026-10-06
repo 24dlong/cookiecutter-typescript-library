@@ -1,2 +1,2 @@
-export { add } from "./math/add.js";
-export { multiply } from "./math/multiply.js";
+export { add } from "./math/add.ts";
+export { multiply } from "./math/multiply.ts";
