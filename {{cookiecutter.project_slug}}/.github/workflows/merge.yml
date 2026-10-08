@@ -20,18 +20,4 @@ permissions:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v7
-
-      - name: Run Publish Action
-        uses: 24dlong/github-actions-library/actions/javascript/publish@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          codeartifact-aws-account-id: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
-          codeartifact-aws-region: ${{ vars.AWS_REGION }}
-          codeartifact-aws-role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
-          codeartifact-domain: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
-          codeartifact-repository: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
-          codeartifact-registry-namespace: ${{ vars.REGISTRY_NAMESPACE }}
+    uses: 24dlong/github-actions-library/.github/workflows/javascript-publish.yml@v7

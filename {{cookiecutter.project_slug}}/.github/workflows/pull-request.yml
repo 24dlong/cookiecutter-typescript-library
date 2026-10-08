@@ -7,17 +7,8 @@ on:
 
 jobs:
   quality-gate:
-    runs-on: ubuntu-latest
-    name: Quality Gate | Core
+    name: Quality Gate # required: it is part of the check name
     permissions:
       id-token: write # allow GitHub's OIDC provider to create a JSON Web Token
       contents: read
-    steps:
-      - uses: 24dlong/github-actions-library/actions/javascript/quality-gate@v6
-        with:
-          codeartifact-aws-account-id: ${{ vars.AWS_CODE_ARTIFACT_ACCOUNT_ID }}
-          codeartifact-aws-region: ${{ vars.AWS_REGION }}
-          codeartifact-aws-role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
-          codeartifact-domain: ${{ vars.AWS_CODE_ARTIFACT_DOMAIN }}
-          codeartifact-repository: ${{ vars.AWS_CODE_ARTIFACT_REPOSITORY }}
-          codeartifact-registry-namespace: ${{ vars.REGISTRY_NAMESPACE }}
+    uses: 24dlong/github-actions-library/.github/workflows/javascript-pull-request.yml@v7
