@@ -45,30 +45,31 @@ This library uses:
 
 ### Test this library in a local app
 
-Use a `file:` dependency from the consuming app. This keeps the setup simple and points the app at this local checkout.
+Consume a packed tarball, not a bare `file:` link to the checkout. A tarball contains exactly what gets published (`dist` only), and pnpm copies it into the app's store.
 
-First, build this library:
+pnpm caches a `file:` tarball by its file name and version. Packing again under the same version leaves the app on the stale copy, so **every pack needs a new local version**. `package.json` has no `version` (semantic-release sets it on publish), so a version is set for the pack only and removed afterwards. Tarballs go in `.cache/tarball`, which is git-ignored.
 
-```bash
-cd /Users/dlong/Documents/Coding/{{cookiecutter.project_slug}}
-pnpm install
-pnpm build
-```
-
-Then, in the consuming app's `package.json`, set the dependency to this local path:
-
-```json
-{
-  "dependencies": {
-    "@24dlong/{{cookiecutter.project_slug}}": "file:/Users/dlong/Documents/Coding/{{cookiecutter.project_slug}}"
-  }
-}
-```
-
-Install dependencies from the consuming app:
+From this repository, run the make target. It builds, picks the next `0.0.0-local.N`, packs, and never leaves a version in `package.json`:
 
 ```bash
-pnpm install
+make pack-local
 ```
 
-When you change this library, run `pnpm build` here again. If the consuming app does not pick up the change, run `pnpm install` in the consuming app again and restart its dev server.
+Pass `APP` to also point a consuming app at the new tarball and install it there. It updates the `{{ cookiecutter.scope + "/" if cookiecutter.scope }}{{ cookiecutter.project_slug }}` entry in the app's `pnpm-workspace.yaml` catalog (or its `package.json` dependency) and runs `pnpm install`:
+
+```bash
+make pack-local APP=../my-app
+```
+
+Then restart the app's dev server, and clear the bundler cache if it still shows the old code (for Expo: `expo start --clear`).
+
+Without `APP`, set the dependency yourself:
+
+```yaml
+catalog:
+  "{{ cookiecutter.scope + "/" if cookiecutter.scope }}{{ cookiecutter.project_slug }}": file:/path/to/{{ cookiecutter.project_slug }}/.cache/tarball/<tarball-name>-0.0.0-local.N.tgz
+```
+
+Before opening a PR in the app, switch the entry back to the published version. Do not commit the `file:` path.
+
+Check what was packed with `tar -tzf .cache/tarball/<tarball-name>-0.0.0-local.N.tgz`.
